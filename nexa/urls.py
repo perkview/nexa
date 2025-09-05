@@ -21,3 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
 ]
+admin.site.site_header = "Nexa Admin Page"
+admin.site.site_title = "Nexa Admin Portal"
+admin.site.index_title = "Nexa Admin Access"
