@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",      # local loopback
     "localhost",      # local dev
-    "nexa.onrender.com"  # your Render production domain
+    "nexa-3ssm.onrender.com"  # your Render production domain
 ]
 
 
@@ -144,4 +144,5 @@ SESSION_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000
+
 SECURE_SSL_REDIRECT = True
