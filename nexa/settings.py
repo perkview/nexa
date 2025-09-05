@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_$2@h1&&vuyuvt_!%zl7x54ka+89nnzsq!h&i=)4z%y72q_#n+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'nexa-resolver.onrender.com',
@@ -135,6 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # folder for production static files
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # your development static files
+
 
 
 
