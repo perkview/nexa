@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center py-5" style="background-color:#F5F5F5; background-image:linear-gradient(180deg, #F5F5F5, #ffffff);">
+  <div class="container">
+    <h1 class="fw-bold mb-3">Terms &amp; Conditions</h1>
+    <p class="text-secondary fs-5">Please read these terms carefully before using our services.</p>
+  </div>
+</section>
+
+<!-- ================= MAIN TERMS CONTENT ================= -->
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      <!-- Introduction -->
+      <h3 class="fw-bold mb-3">Introduction</h3>
+      <p class="text-secondary mb-4">
+        By accessing or using our website and services, you agree to be bound by these Terms &amp; Conditions.
+        If you do not agree, please discontinue use immediately.
+      </p>
+
+      <!-- Eligibility & Accounts -->
+      <h3 class="fw-bold mb-3">Eligibility &amp; Accounts</h3>
+      <p class="text-secondary mb-4">
+        You must be at least 18 years old to use our services. When creating an account, you agree to provide
+        accurate and up-to-date information. You are responsible for maintaining the confidentiality of your
+        account credentials.
+      </p>
+
+      <!-- Use of Services -->
+      <h3 class="fw-bold mb-3">Use of Services</h3>
+      <p class="text-secondary mb-4">
+        You agree to use our services only for lawful purposes. Do not misuse, hack, disrupt, or violate
+        intellectual property rights. Any prohibited activity may result in suspension or termination.
+      </p>
+
+      <!-- Orders, Payments & Subscriptions -->
+      <h3 class="fw-bold mb-3">Orders, Payments &amp; Subscriptions</h3>
+      <p class="text-secondary mb-4">
+        Payments must be made through our approved channels. Refunds and renewals are subject to our policies.
+        We reserve the right to update pricing or subscription terms with prior notice.
+      </p>
+
+      <!-- Intellectual Property -->
+      <h3 class="fw-bold mb-3">Intellectual Property</h3>
+      <p class="text-secondary mb-4">
+        All content on this platform, including text, graphics, and software, is the property of our company
+        unless otherwise stated. Users retain ownership of their submitted content but grant us rights to
+        display and improve services.
+      </p>
+
+      <!-- Limitation of Liability -->
+      <h3 class="fw-bold mb-3">Limitation of Liability</h3>
+      <p class="text-secondary mb-4">
+        We are not liable for any direct, indirect, or consequential damages arising from the use or inability
+        to use our services, except as required by applicable law.
+      </p>
+
+      <!-- Termination -->
+      <h3 class="fw-bold mb-3">Termination</h3>
+      <p class="text-secondary mb-4">
+        We reserve the right to suspend or terminate accounts that violate these terms or engage in harmful
+        activities. Users may terminate their account by contacting support.
+      </p>
+
+      <!-- Governing Law -->
+      <h3 class="fw-bold mb-3">Governing Law</h3>
+      <p class="text-secondary mb-4">
+        These Terms &amp; Conditions shall be governed by and interpreted under the laws of Pakistan, without
+        regard to conflict of law principles.
+      </p>
+
+      <!-- Changes to Terms -->
+      <h3 class="fw-bold mb-3">Changes to Terms</h3>
+      <p class="text-secondary mb-4">
+        We may update these Terms &amp; Conditions at any time. Continued use of our services after updates
+        constitutes acceptance of the revised terms. Users will be notified of significant changes.
+      </p>
+
+      <!-- Contact Information -->
+      <h3 class="fw-bold mb-3">Contact Information</h3>
+      <p class="text-secondary mb-4">
+        For any legal or terms-related inquiries, please visit our
+        <a href="//" class="text-decoration-none" style="color:#007BFF;">Contact Page</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+<section class="text-center py-5" style="background-color:#F5F5F5;">
+  <div class="container">
+    <div class="p-4 rounded-4 shadow-sm bg-white mx-auto" style="max-width:700px;">
+      <h5 class="fw-bold mb-3">
+        By continuing to use our services, you agree to these Terms &amp; Conditions.
+      </h5>
+      <a href="{% url 'contact' %}" class="btn btn-lg text-white" style="background-color:#28A745;">Contact Us for Questions</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center py-5"
+    style="background-color:#F5F5F5; background-image:url('//'); background-size:cover; background-position:center;">
+    <div class="container">
+        <h1 class="fw-bold mb-3">Get in Touch</h1>
+        <p class="text-secondary fs-5">We’d love to hear from you. Reach out to us anytime.</p>
+    </div>
+</section>
+
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="container py-5">
+    <h2 class="fw-bold text-center mb-4">Send Us a Message</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form method="post" class="p-4 shadow-sm rounded-4 bg-white" action="/contact/">
+                {% csrf_token %}
+
+                <!-- Success/Error Alerts -->
+                {% if success %}
+                <div class="alert alert-success" role="alert">
+                    ✅ Message sent successfully!
+                </div>
+                {% endif %}
+
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    ❌ Please enter a valid email and message.
+                </div>
+                {% endif %}
+
+                <!-- Input Fields -->
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Your Email"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="subject" class="form-control form-control-lg" placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                    <textarea name="message" class="form-control form-control-lg" rows="5" placeholder="Your Message"
+                        required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-lg w-100 text-white" style="background-color:#28A745;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

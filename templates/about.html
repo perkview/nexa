@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Business Platform{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="container py-5 d-flex flex-column flex-lg-row align-items-center">
+    <!-- Left Side -->
+    <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1 class="fw-bold display-5 mb-3 text-dark">About Us</h1>
+        <p class="lead text-secondary">Learn more about our journey, values, and mission.</p>
+    </div>
+    <!-- Right Side -->
+    <div class="col-lg-6 text-center">
+        <img src="{% static 'images/about-hero.png' %}" alt="About Us Illustration"
+            class="img-fluid rounded-4 shadow-sm" style="max-height: 380px;">
+    </div>
+</section>
+
+<!-- ================= COMPANY STORY / MISSION ================= -->
+<section class="container py-5">
+    <h2 class="fw-bold text-center mb-5">Our Story</h2>
+    <div class="row align-items-center mb-5">
+        <!-- Left Image -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <img src="{% static 'images/our-story.png' %}" alt="Our Team" class="img-fluid rounded-4 shadow-sm">
+        </div>
+        <!-- Right Text -->
+        <div class="col-lg-6">
+            <p class="text-secondary fs-5">
+                We started with a simple belief — that solving business problems should be easy and accessible.
+                Over the years, our team has grown into a diverse group of innovators who share a passion for
+                creating tools that help companies succeed. Our journey is guided by dedication, learning, and
+                the constant drive to deliver value.
+            </p>
+        </div>
+    </div>
+
+    <!-- Mission Row -->
+    <div class="row text-center mt-5">
+        <div class="col-md-12">
+            <i class="bi bi-bullseye fs-1 text-primary mb-3"></i>
+            <h5 class="fw-bold">Our Mission</h5>
+            <p class="text-secondary">
+                We aim to simplify business for everyone by building solutions that remove complexity and empower
+                growth.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CORE VALUES ================= -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="fw-bold text-center mb-5">Our Values</h2>
+        <div class="row g-4 text-center">
+            <!-- Value Card 1 -->
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                    <i class="bi bi-shield-check fs-1 text-primary mb-3"></i>
+                    <h5 class="fw-bold">Integrity</h5>
+                    <p class="text-secondary">We uphold honesty and transparency in all we do.</p>
+                </div>
+            </div>
+            <!-- Value Card 2 -->
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                    <i class="bi bi-lightbulb fs-1 text-warning mb-3"></i>
+                    <h5 class="fw-bold">Innovation</h5>
+                    <p class="text-secondary">We continuously push boundaries to create better solutions.</p>
+                </div>
+            </div>
+            <!-- Value Card 3 -->
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                    <i class="bi bi-people fs-1 text-success mb-3"></i>
+                    <h5 class="fw-bold">Customer First</h5>
+                    <p class="text-secondary">Our customers’ needs guide every decision we make.</p>
+                </div>
+            </div>
+            <!-- Value Card 4 -->
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                    <i class="bi bi-graph-up-arrow fs-1 text-danger mb-3"></i>
+                    <h5 class="fw-bold">Growth</h5>
+                    <p class="text-secondary">We focus on sustainable progress for our team and clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= OUR TEAM ================= -->
+<!-- <section class="container py-5 text-center">
+  <h2 class="fw-bold mb-5">Meet the Team</h2>
+  <div class="card border-0 shadow-sm rounded-4 mx-auto p-4" style="max-width:300px;">
+    <img src="{% static 'images/founder.jpg' %}" 
+         alt="Founder" 
+         class="rounded-circle mb-3" 
+         style="width:120px; height:120px; object-fit:cover;">
+    <h6 class="fw-bold">Muhammad Ahmad</h6>
+    <p class="text-secondary mb-1">Founder & Visionary</p>
+    <small class="text-muted">Turning business challenges into solutions.</small>
+  </div>
+</section> -->
+
+
+
+<!-- ================= CALL TO ACTION ================= -->
+<section class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h2 class="fw-bold mb-4 display-6">Want to work with us?</h2>
+        <a href="{% url 'contact' %}" class="btn px-4 py-3 fw-semibold rounded-3 shadow-sm"
+            style="background-color:#28A745; border:none;">
+            Contact Us
+        </a>
+    </div>
+</section>
+
+{% endblock %}

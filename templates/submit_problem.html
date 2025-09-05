@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center py-5"
+    style="background-color:#F5F5F5; background-image:linear-gradient(180deg, #F5F5F5, #ffffff);">
+    <div class="container">
+        <h1 class="fw-bold mb-3">Tell Us Your Biggest Business Challenge</h1>
+        <p class="text-secondary fs-5">
+            We’re building a platform to solve real business problems. Share yours and get early access.
+        </p>
+    </div>
+</section>
+
+<!-- ================= SHORT EXPLAINER ================= -->
+<section class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+                <div class="fs-1 mb-3">📝</div>
+                <h5 class="fw-bold">Share your challenge</h5>
+                <p class="text-secondary">Tell us the biggest obstacle your business faces today.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+                <div class="fs-1 mb-3">🤝</div>
+                <h5 class="fw-bold">Help shape the solution</h5>
+                <p class="text-secondary">Your feedback directly guides the platform we’re building.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+                <div class="fs-1 mb-3">🚀</div>
+                <h5 class="fw-bold">Get priority access</h5>
+                <p class="text-secondary">Be the first to experience our solution when we launch.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= MAIN FORM ================= -->
+<!-- ===== PROBLEM SUBMISSION PAGE ===== -->
+<section class="bg-light py-5">
+    <div class="container">
+
+        <!-- Hero / Title -->
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Submit Your Business Problem</h1>
+            <p class="text-secondary fs-5 mt-3">
+                Help us understand your challenges so we can build solutions that matter.
+                Your feedback will directly shape our platform features.
+            </p>
+        </div>
+
+        <!-- Problem Form -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0 rounded-4 p-4">
+                    <form method="post" enctype="multipart/form-data" class="row g-3 p-4 shadow-sm rounded-4 bg-white" action="/submit_problem/">
+                        {% csrf_token %}
+
+                        <!-- Alerts -->
+                        {% if success %}
+                        <div class="alert alert-success">✅ Thank you! Your problem has been submitted.</div>
+                        {% endif %}
+                        {% if error %}
+                        <div class="alert alert-danger">❌ Please fill all required fields.</div>
+                        {% endif %}
+
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name (optional)</label>
+                            <input type="text" name="full_name" class="form-control rounded-3"
+                                placeholder="Enter your name">
+                        </div>
+
+                        <!-- Business Type -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Business Type</label>
+                            <select name="business_type" class="form-select rounded-3" required>
+                                <option selected disabled>Select your business type</option>
+                                <option>Retail</option>
+                                <option>Service</option>
+                                <option>Tech Startup</option>
+                                <option>Manufacturing</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Company Size -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Company Size</label>
+                            <select name="company_size" class="form-select rounded-3" required>
+                                <option selected disabled>Select size</option>
+                                <option>Freelancer / Solo</option>
+                                <option>Small Team (2-10)</option>
+                                <option>Medium (11-50)</option>
+                                <option>Large (51+)</option>
+                            </select>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Business Email <span
+                                    class="text-danger">*</span></label>
+                            <input type="email" name="email" class="form-control rounded-3"
+                                placeholder="Enter your email" required>
+                        </div>
+
+                        <!-- Problem -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Your #1 Business Problem</label>
+                            <textarea name="problem" class="form-control rounded-3" rows="4"
+                                placeholder="Describe your challenge in detail" required></textarea>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Attach File (optional)</label>
+                            <input type="file" name="file_upload" class="form-control rounded-3">
+                        </div>
+
+                        <!-- Agreement -->
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" required id="agreeCheck">
+                                <label class="form-check-label text-secondary" for="agreeCheck">
+                                    I agree to the <a href="{% url 'privacy' %}" class="text-decoration-none">Privacy
+                                        Policy</a> &
+                                    <a href="{% url 'terms' %}" class="text-decoration-none">Terms of Service</a>.
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn px-5 py-3 fw-semibold rounded-3 text-white shadow-sm"
+                                style="background-color:#FF4500;">
+                                🚀 Submit Problem & Get Early Access
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Submit Section -->
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <h5 class="fw-bold">📝 Share Your Challenge</h5>
+                <p class="text-secondary">Tell us about the biggest barrier holding your business back.</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="fw-bold">🤝 Shape the Solution</h5>
+                <p class="text-secondary">Your input helps us design tools that truly solve business problems.</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="fw-bold">🚀 Early Access</h5>
+                <p class="text-secondary">Be the first to try our platform and get priority support.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= SUCCESS STATE (to be shown after submission) ================= -->
+{% if success %}
+<section class="container py-5 text-center">
+    <div class="p-4 bg-light rounded-4 shadow-sm mx-auto" style="max-width:600px;">
+        <h4 class="text-success mb-3">✅ Thank you! Your problem has been submitted.</h4>
+        <p class="text-secondary">We’ll review it and get back to you.</p>
+        <div class="mt-4">
+            <a href="{% url 'index' %}" class="btn btn-outline-primary me-2">Return to Homepage</a>
+            <a href="//" class="btn text-white" style="background-color:#FF4500;">Invite Friends for Faster Access</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ================= TESTIMONIALS (Optional) ================= -->
+<!-- <section class="container py-5">
+    <h3 class="fw-bold text-center mb-5">What People Are Saying</h3>
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <blockquote class="p-4 bg-white rounded-4 shadow-sm">
+                “Finally, a platform that listens to real business challenges.”
+            </blockquote>
+        </div>
+        <div class="col-md-4 mb-4">
+            <blockquote class="p-4 bg-white rounded-4 shadow-sm">
+                “I love that my feedback directly shapes the product.”
+            </blockquote>
+        </div>
+        <div class="col-md-4 mb-4">
+            <blockquote class="p-4 bg-white rounded-4 shadow-sm">
+                “This is exactly what startups like mine need.”
+            </blockquote>
+        </div>
+    </div>
+</section> -->
+
+{% endblock %}
