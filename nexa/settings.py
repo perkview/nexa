@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-_$2@h1&&vuyuvt_!%zl7x54ka+89nnzsq!h&i=)4z%y72q_#n+
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'nexa-resolver.onrender.com',
     '127.0.0.1',      # Local development
     'localhost',
     '13.228.225.19',
@@ -148,6 +149,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000
 
 SECURE_SSL_REDIRECT = True
+
 
 
 
