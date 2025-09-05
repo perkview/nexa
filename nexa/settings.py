@@ -31,7 +31,6 @@ ALLOWED_HOSTS = [
     'https://nexa-resolver.onrender.com',
     "127.0.0.1",      # local loopback
     "localhost",      # local dev
-    "nexa-3ssm.onrender.com"  # your Render production domain
 ]
 
 
@@ -148,5 +147,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000
 
 SECURE_SSL_REDIRECT = True
+
 
 
