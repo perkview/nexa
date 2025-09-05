@@ -141,14 +141,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Location where collectstatic will collect all static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# SECURITY HEADERS
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000
 
-SECURE_SSL_REDIRECT = True
+
 
 
 
